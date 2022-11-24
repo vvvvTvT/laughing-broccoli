@@ -24,7 +24,7 @@ n = 20 #设置每个人拍摄图片数量。
 while(n):
     #红灯亮
     pyb.LED(RED_LED_PIN).on()
-    sensor.skip_frames(time = 3000) # Give the user time to get ready.等待3s，准备一下表情。
+    sensor.skip_frames(time = 3000) # Give the user time to get ready.。
 
     #红灯灭，蓝灯亮
     pyb.LED(RED_LED_PIN).off()
@@ -32,9 +32,9 @@ while(n):
 
     #保存截取到的图片到SD卡
     print(n)
-    sensor.snapshot().save("singtown/s%s/%s.pgm" % (num, n) ) # or "example.bmp" (or others)
+    sensor.snapshot().save("singtown/s%s/%s.pgm" % (num, n) ) # 将拍摄的照片存储至创建好的文件夹中。
 
     n -= 1
 
     pyb.LED(BLUE_LED_PIN).off()
-    print("Done! Reset the camera to see the saved image.")
+    print("Done! Reset the camera to see the saved image.")# 照片拍摄完成。
